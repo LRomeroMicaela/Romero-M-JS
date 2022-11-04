@@ -1,0 +1,113 @@
+/* footer */
+.footer-hour {
+    h3{
+    font-family:$font-title;
+    font-size: nth($size,6);
+    margin: nth($size,4);
+}
+    p{
+       font-family: $font-general;
+       font-size: nth($size,3) ;
+       letter-spacing: 0.1rem; 
+       padding: 0.8rem;
+    }
+}
+.footer-hour{
+    margin-right:nth($size,5);
+}
+#ubicacion{
+    font-family:$font-title;
+    font-size:nth($size,6);
+    margin: nth($size,4);
+}
+.footer{
+    font-family: $font-general;
+    font-size: nth($size,2);
+    font-weight: bold;
+    background: rgb(218,230,252);
+    background: linear-gradient(313deg, rgba(218,230,252,1) 0%, rgba(61,87,165,1) 99%);
+    list-style: none;
+    text-decoration: none;
+    padding:nth($size,4);   
+}
+#instagram{
+    padding: nth($size,1);
+    position: fixed;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    margin: nth($size,1);
+}
+/* grid footer */
+.footer{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr;
+    grid-template-areas: 
+    "title hora"
+    "mapa hora"
+    "mapa ic";
+}
+#ubicacion{
+    grid-area: title;
+}
+.mapa{
+    grid-area: map;
+}
+.footer-icon{
+    grid-area: ic;
+    display: flex;
+    justify-content: center;
+}
+.footer-hour{
+    grid-area: hora;
+}
+.icon{
+    margin: nth($size, 4);
+}
+.div-mediopago{
+    @extend %disposicion;
+    flex-direction: row;
+    margin: 1rem;
+}
+.mediopago{
+    display:inline-block;
+}
+
+@media screen and (max-width:768px) {
+    .footer-hour {
+        p{
+        display: flex;
+        flex-wrap: wrap;   
+    }
+}
+    .footer{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+        grid-template-areas: 
+        "title"
+        "map"
+        "hora"
+        "ic";
+    } 
+    #mediopago{
+        max-width: 12%;
+    }
+    .footer-icon{
+        max-width: 100%;
+    }
+    #instagram{
+        display: none;
+    } 
+    .div-mediopago{
+        display: none;
+    }
+    .mapa{
+        max-width: 80%;
+    } 
+}
+
+

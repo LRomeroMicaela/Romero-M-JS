@@ -1,0 +1,140 @@
+//todo de las cards los primeros 3 id.
+.catalogo{
+    @extend %disposicion;
+}
+.cont-price{
+    display:grid;
+    grid-template-columns: 0.1fr 0.2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "txt price";
+    padding: 1rem;
+}
+.txt{
+    @extend %disposicion;
+    grid-area: txt;
+}
+.price{
+    grid-area: price;
+}
+.img-cat{
+    padding:nth($size,1);
+    margin:nth($size,1);
+    background-color: $bg_imgcatalogo;
+}
+.img-banner{
+    max-width: 50%;
+    padding: nth($size,1);
+    margin: nth($size,4);
+}
+section{
+    div{
+        div{
+            p{
+                margin: nth($size,4);
+                font-family: $font-general;
+                // padding: nth($size,1);
+            }
+        }
+    }
+}
+h3{
+    margin: nth($size,4);
+    padding: nth($size,1);
+    font-family: $font-general;
+}
+.banner-contain{
+    margin: nth($size,4);
+    margin-bottom: nth($size,6);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: "img1 txt1 img2 txt2 img3 txt3";
+}
+.img1-ban{
+    grid-area: img1;
+    @extend %disposicion;
+}
+.img2-ban{
+    grid-area: img2;
+    @extend %disposicion;
+}
+.img3-ban{
+    grid-area: img3;
+    @extend %disposicion;
+}
+.txt1-ban{
+    grid-area: txt1;
+    @extend %disposicion;
+    flex-direction: column;
+}
+.txt2-ban{
+    grid-area: txt2;
+    @extend %disposicion;
+    flex-direction: column;
+}
+.txt3-ban{
+    grid-area: txt3;
+    @extend %disposicion;
+    flex-direction: column;
+}
+@media screen and (max-width: 768px){
+    .banner-contain{
+        margin: nth($size,1);
+        margin-bottom: nth($size,6);
+        text-align: center;
+        display:grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "img1 txt1"  
+        "img2 txt2" 
+        "img3 txt3";
+    }
+    .img1-ban{
+        grid-area: img1;
+        @extend %disposicion;
+    }
+    .img2-ban{
+        grid-area: img2;
+        @extend %disposicion;
+    }
+    .img3-ban{
+        grid-area: img3;
+        @extend %disposicion;
+    }
+    .txt1-ban{
+        grid-area: txt1;
+        @extend %disposicion;
+        flex-direction: column;
+    }
+    .txt2-ban{
+        grid-area: txt2;
+        @extend %disposicion;
+        flex-direction: column;
+    }
+    .txt3-ban{
+        grid-area: txt3;
+        @extend %disposicion;
+        flex-direction: column;
+    }
+}
+.subm1{
+    margin-top: nth($size, 4);
+    background-color:$bg_button;
+    border-color: $border_button;
+    color: black;
+    font-family: $font-general;
+    font-size: nth($size, 2); 
+    font-weight: 600;
+    
+}
+.subm1:hover{
+    background-color: rgb(68,100,161);
+}
+
+/* animaciones */
+/* animate main */
+.main-img:hover{
+    transform: translate(5px,5px);
+    transition-duration: 1s;
+}

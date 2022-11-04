@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Header gral */
+.logo{
+    border-radius: 50%;
+}
+.menu-logo{
+    display: flex;
+    justify-content: flex-start;
+}
+.menu{
+    color: black;
+    font-family:'Playfair Display', serif;
+    font-weight: 600;
+}
+.menu-txt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 576px){
+    .mobile{
+        display: flex;
+        align-items: center;
+    } 
+    .orden_nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .burger{
+        background-color: lightseagreen;
+    }
+    .menu-txt{
+        display: none;
+    }
+    .list-no{
+        list-style: none;
+    }
+    .desplegable{
+        background-color: lightseagreen;
+        font-weight: 600;
+    }
+}
+/* catalogo */
+.catalogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.img-cat{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: rgb(233, 236, 239);
+}
+/* log in */
+.formulary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+}
+h2{
+    font-family:'Playfair Display', serif;
+    font-weight: 600;
+    padding: 1rem;
+    margin: 1rem; 
+}
+.subm{
+    background-color: gainsboro;
+    border-color: gray;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+.txt-login{
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+/* footer */
+.footer-hour h3{
+    font-family:'Ubuntu Condensed', sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+.footer-hour{
+    margin-right: 5rem ;
+}
+#ubicacion{
+    font-family:'Ubuntu Condensed', sans-serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+.footer{
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: lightseagreen;
+    list-style: none;
+    text-decoration: none;
+    padding: 1rem;   
+}
+#instagram{
+    background-color: lightseagreen;
+    border-radius: 50%;
+    padding: 1.0rem;
+    position: fixed;
+    text-align: center;
+    max-width: 100%;
+    bottom: 0;
+    right: 0;
+    margin: 0.5rem;
+}
+/* grid footer */
+.footer{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr;
+    grid-template-areas: 
+    "title hora"
+    "mapa hora"
+    "mapa ic";
+}
+#ubicacion{
+    grid-area: title;
+}
+.mapa{
+    grid-area: mapa;
+}
+.footer-icon{
+    grid-area: ic;
+    display: flex;
+    justify-content: center;
+}
+.footer-hour{
+    grid-area: hora;
+}
+.icon{
+    margin: 1rem;
+}
+@media screen and (max-width:768px) {
+    .footer-hour p{
+        display: flex;
+        flex-wrap: wrap;   
+    }
+    .footer{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr;
+        grid-template-areas: 
+        "title"
+        "mapa"
+        "hora"
+        "ic";
+    } 
+    #mediopago{
+        max-width: 12%;
+    }
+    .footer-icon{
+        max-width: 100%;
+    }
+    #instagram{
+        display: none;
+    }    
+}
+
+/* animaciones */
+/* animate main */
+.main-img1:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+.main-img2:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+.main-img3:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+.main-img4:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+.main-img5:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+.main-img6:hover{
+    transform: translate(5px,5px);
+    transition: translate .3s;
+}
+
+/* HTML CARRITO form */
+.buy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.buy-term{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.buy p{
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.buy p b{
+    text-decoration: underline;
+    font-size: 1rem;
+}
+.buy-term p, .buy-term option, .buy-term label{
+    padding: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+.buy-term option{
+    padding: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+.comment{
+    padding: 1rem;
+    font-size: 600;
+}
+.cant{
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    margin: 0.5rem; 
+}
+.cant-select{
+    padding: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    border: 2rem;
+    font-weight: bold;
+    margin: 0.5rem;
+    background-color: gainsboro;
+}
+
+/* CARRITO img, description y material */
+.seleccionado{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "imgs desc"
+    "imgs mat";
+    width: 70%;
+    margin: 0 auto;
+}
+.seleccionado-img{
+    grid-area: imgs;
+}
+.seleccionado-description{
+    grid-area: desc;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;   
+}
+.seleccionado-material{
+    grid-area: mat;
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+.seleccionado-img img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border: solid;
+    border-color: gray;
+    border-radius: 10%;
+}
+@media screen and (max-width: 768px){
+    .seleccionado{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.3fr 0.3fr;
+        grid-template-areas: 
+        "imgs"
+        "desc"
+        "mat";
+        width: 70%;
+        margin: 0 auto;
+    }
+    .seleccionado-description, .seleccionado-material, .buy p b, .buy input{
+        font-size: 0.8rem;
+    }
+    .buy-term{
+        display: flex;
+        justify-content: center;   
+    }
+}
+/* HTML REGISTRO */
+.formul{
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+.but{
+    background-color: gainsboro;
+    border-color: gray;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+.caja{
+    background-color: gainsboro;
+}

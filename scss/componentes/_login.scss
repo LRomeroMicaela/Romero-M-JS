@@ -1,0 +1,70 @@
+.formulary{
+    @extend %disposicion;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: nth($size, 4);
+}
+#login{
+    font-family:$font-title;
+    font-weight: 600;
+    font-size:nth($size, 6) ;
+    padding: nth($size, 4) ;
+    margin: nth($size, 6); 
+}
+.subm{
+    background-color:$bg_button;
+    border-color: $border_button;
+    color: black;
+    font-family: $font-general;
+    font-size: nth($size, 4); 
+    font-weight: 600;
+    margin-bottom: nth($size,6);
+}
+// animacion botón
+.subm:hover{
+    background-color: rgb(68,100,161);
+}
+.txt-login{
+    font-family: $font-general;
+    font-size: nth($size, 4); 
+    font-weight: 600;
+}
+ .img-promocionales{
+  display: grid;
+  grid-template-columns: 1.0fr 1.0fr 1.0fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "prom1 prom2 prom3"
+  ;
+ }
+ .prom1{
+    grid-area: prom1;
+    margin: nth($size,6);
+    margin-top: nth($size,6);
+ }
+.prom2{
+    grid-area: prom2;
+    margin: nth($size,6);
+    margin-top: nth($size,6);
+}
+.prom3{
+    grid-area: prom3; 
+    margin: nth($size,6);
+    margin-top: nth($size,6);  
+}
+@media screen and (max-width:768px){
+    .prom2, .prom3, .prom4{
+        display: none;
+    }
+    .img-promocionales{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .prom1{
+        width: 60%;
+        height: 60%;
+    }
+}

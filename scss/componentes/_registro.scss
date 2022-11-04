@@ -1,0 +1,28 @@
+.formul{
+    @extend %disposicion;
+    margin: nth($size,1);
+    padding: nth($size,1);
+    font-family: $font-general;
+    font-size: nth($size,4); 
+    font-weight: 600;
+}
+.but{
+    background-color: $bg_button;
+    border-color:$border_button;
+    color: black;
+    font-family: $font-general;
+    font-size: nth($size,4); 
+    font-weight: 600;
+}
+.caja{
+    background-color: $bg_button
+    ;
+}
+.aceptar{
+    @extend %disposicion;   
+}
+
+// animacion boton
+.but:hover{
+    background-color: rgb(68,100,161);   
+}

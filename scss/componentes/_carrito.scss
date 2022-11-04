@@ -1,0 +1,120 @@
+.buy{
+    @extend %disposicion;
+    flex-direction: column;
+}
+.buy-term{
+    @extend %disposicion;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.buy p{
+    font-family: $font-general;
+    font-size: nth($size,2);
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    padding:nth($size,1);
+    margin: nth($size,1);
+    @extend %disposicion;
+    align-items: center;
+}
+.buy p b{
+    text-decoration: underline;
+    font-size: 1rem;
+}
+.buy-term p, .buy-term option, .buy-term label{
+    padding: nth($size,1);
+    font-family: $font-general;
+    font-size:nth($size,3);
+    font-weight: 600;
+    margin:nth($size,1);
+}
+.buy-term option{
+    padding: nth($size,1);
+    font-family: $font-general;
+    font-size: nth($size,3);
+    font-weight: 600;
+    margin:nth($size,1);
+}
+.comment{
+    padding: nth($size,4);
+    font-size: 600;
+}
+.cant{
+    font-family: 'Playfair Display', serif;
+    font-size: nth($size,4);
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    padding: nth($size,4);
+    margin: nth($size,1); 
+}
+.cant-select{
+    padding: nth($size,1);
+    font-family: $font-general;
+    font-size: nth($size,3);
+    border: nth($size,6);
+    font-weight: bold;
+    margin: nth($size,1);
+    background-color: $bg_button;
+}
+.thank{
+    margin: nth($size,6);
+}
+
+// animacion boton
+.env:hover{
+    background-color: rgb(68,100,161);
+    color: white;
+}
+
+/* CARRITO img, description y material */
+.seleccionado{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "imgs desc"
+    "imgs mat";
+    width: 80%;
+    margin: 0 auto;
+}
+.seleccionado-img{
+    grid-area: imgs;
+}
+.seleccionado-description{
+    grid-area: desc;
+    @include aligncenter;
+    font-family:$font-general;
+    font-size: 1rem; 
+    font-weight: 600;   
+}
+.seleccionado-material{
+    grid-area: mat;
+    @include aligncenter;
+    font-family: $font-general;
+    font-size: 1rem; 
+    font-weight: 600;
+}
+.seleccionado-img img{
+    margin: nth($size,4);
+    border: solid;
+    border-color:$border_button;
+    border-radius: 10%;
+}
+@media screen and (max-width: 768px){
+    .seleccionado{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.3fr 0.3fr;
+        grid-template-areas: 
+        "imgs"
+        "desc"
+        "mat";
+        width: 70%;
+        margin: 0 auto;
+    }
+    .seleccionado-description, .seleccionado-material, .buy p b, .buy input{
+        font-size: 0.8rem;
+    }
+    .buy-term{
+        @include justifycenter;  
+    }
+}

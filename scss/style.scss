@@ -1,0 +1,18 @@
+@import"./base/variables";
+@import"./base/lista";
+@import"./base/extend";
+@import"./base/maps";
+@import"./base/mixin";
+@import"./componentes/header";
+@import"./componentes/carrito";
+@import"./componentes/catalogo";
+@import"./componentes/login";
+@import"./componentes/footer";
+@import"./componentes/registro";
+
+
+
+
+*{ margin:0;
+padding:0; 
+}

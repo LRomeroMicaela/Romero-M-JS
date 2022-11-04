@@ -1,0 +1,77 @@
+.titulo{
+    font-family:$font-title;
+    font-weight: 600;
+    font-size:nth($size, 6);
+    padding: nth($size, 4);
+    margin: nth($size, 4);
+    display: flex;
+    justify-content: flex-start; 
+}
+.logo{
+    border-radius: 50%;
+}
+.menu-logo{
+    display: flex;
+    justify-content: flex-start;
+}
+.menu{
+    color: black;
+    font-family: $font-general;
+    padding: nth($size,4);
+}
+.menu-txt{
+    @extend %disposicion;
+    flex-wrap: map-get($banner-header, continuidad);
+    list-style: none;
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 576px){
+    .banner-up{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+        align-items: center;
+    } 
+    .orden_nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .burger{
+        background-color: lightseagreen;
+    }
+    .menu-txt{
+        display: none;
+    }
+    .list-no{
+        list-style: none;
+    }
+    .desplegable{
+        background-color: lightseagreen;
+        font-weight: 600;
+    }
+}
+
+// banner superior
+.banner-up{
+    @extend %disposicion;
+    flex-direction: map-get($banner-header,direccion);
+    flex-wrap: map-get($banner-header, continuidad);
+    height: map-get($banner-header, ancho);
+    background-color: map-get($banner-header , bg-banner);
+}
+.descuento{
+    color: white;
+    @extend %disposicion;
+    font-family: $font-general;
+}
+.bomb{
+    margin-left: nth($size,4);
+    margin-right: nth($size,4);
+}
+.banner-up:hover{
+    background-color: mediumblue;
+    transition-duration: 1s;
+}
