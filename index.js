@@ -10,9 +10,6 @@ class Lentes{
         this.precio = precio;
         this.stock = stock;
     }
-    restaStock(){
-        this.stock = this.stock - 1; //acá tengo que poner la cantidad que seleccione el cliente
-    }
 }
 
 //creacion de objetos de la clase Lentes
@@ -38,9 +35,9 @@ function armadoCard(){
               <h5 class="card-title txt-login">${armazon.nombre}, ${armazon.marca}</h5>
               <div class="txt-login cont-price ">
               <h6 class="txt">$</h6>
-              <h6 class="card-text price">${armazon.precio}</h6>
+              <h6 class="card-txt price">${armazon.precio}</h6>
               </div>
-              <a id="btn-add" href="#" class="btn btn-primary subm1">Agregar al carrito</a>
+              <a id="btn-add" href="#" onClick="restarAlStock(${armazon.id}, ${armazon.stock})" class="btn btn-primary subm1">Agregar al carrito</a>
         </div>`; 
         document.getElementById("container-productos").append(card); 
         card.className ="card col-10 col-md-3 img-cat main-img";   
@@ -70,4 +67,13 @@ function addToCartClicked(event){
     console.log(arrayProductos)
 
     localStorage.setItem('lentes', JSON.stringify(arrayProductos))
+};
+
+
+//me llevo del array a la hoja carrito el id y stock para restar en la compra
+datosDeStock=[];
+function restarAlStock(idProd, stockDispo){
+  datosDeStock.push({idProd,stockDispo});
+  console.log(datosDeStock);
+  localStorage.setItem(`stockId`, JSON.stringify(datosDeStock));  
 };

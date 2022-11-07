@@ -1,7 +1,10 @@
 //saco del localStorage el item seleccionado por el usuario
 let almacenados = JSON.parse(localStorage.getItem("lentes"));
+let seleccionadoIdStock = JSON.parse(localStorage.getItem("stockId"));
 const carrito = [] ;
 console.log (carrito);
+const carritoStockId = [];
+console.log(carritoStockId);
 
 extraerProdSeleccinado();
 
@@ -14,6 +17,7 @@ function extraerProdSeleccinado() {
             console.log(cardImg, cardPrecio, cardTitle);
             carrito.push({cardTitle, cardPrecio, cardImg});
             mostrarImgDeProdSeleccionado();
+            extraerDataStock();
         }
     }
 }
@@ -33,7 +37,6 @@ function mostrarImgDeProdSeleccionado(){
    multiplicarPorLaCantDeseada();
 }
 
-// para borrar lo del carrito
 //funcion para vaciar carrito y localStorage
 //variable para borrar carrito, con close boton
 
@@ -63,11 +66,29 @@ function multiplicarPorLaCantDeseada(){
         }
     });
     }
+    restarAlStock(valor);
 }
 
+//funcion para extraer stock y id del producto seleccionado, que se guarda en carritoStockId
+function extraerDataStock() {
+    if (seleccionadoIdStock != null){
+        for (let item of seleccionadoIdStock) {
+            let { idProd, stockDispo } = item;
+            console.log(item);
+            console.log(idProd, stockDispo);
+            carritoStockId.push({idProd, stockDispo});
+        }
+    }
+};
+
+function restarAlStock(value){
+    if (value != undefined || null){
+        let restarAlStock = carritoStockId.idProd - value;
+        console.log(restarAlStock);
+    }
+}
 
 //NOTAS PARA MI
 //me falta restar a la cantidad seleccionada al stock 
-//index.js el $ antes del precio
 // validar input
 //crear un alert con los datos del comprador y lo elegido.
