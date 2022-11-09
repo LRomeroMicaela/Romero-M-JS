@@ -43,7 +43,7 @@ function mostrarImgDeProdSeleccionado(){
 const clearCarrito = document.getElementById(`boton-close`);
     clearCarrito.addEventListener(`click`, clearHTML);
 function clearHTML(){
-    const eliminarloTodo = localStorage.removeItem(`lentes`);
+    const eliminarloTodo = localStorage.removeItem(`lentes`,`stockId`, `stockActualizado`);
     artElegido.innerHTML = "";
     almacenados = "";    
 }
@@ -83,13 +83,15 @@ function extraerDataStock() {
 };
 
 function restarAlStock(value){
+        if(value != undefined || null ){
         for (let stock of carritoStockId){
                 let {stockDispo} = stock
                     let restarAlStock = stockDispo - value; 
                     carritoStockId.push({restarAlStock});
                     localStorage.setItem(`stockActualizado`, JSON.stringify(carritoStockId));
-                    break;         
-        }
+         break;           
+        }        
+    }
 }
 
 

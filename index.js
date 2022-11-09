@@ -70,7 +70,7 @@ function addToCartClicked(event){
 };
 
 
-//me llevo del array a la hoja carrito el id y stock para restar en la compra
+//me llevo del array a la hoja carrito, el id y stock para restar en la compra
 datosDeStock=[];
 function restarAlStock(idProd, stockDispo){
   datosDeStock.push({idProd,stockDispo});
@@ -85,13 +85,14 @@ const stockAct = [];
 let idProd = "";
 let stockDispo = "";
 function extraerStock(){
-    if (stockAct != null){
+    if (stockAct != null || undefined){
         for (let item of actualizacionDelStock) {
             let { idProd, restarAlStock } = item;
             console.log(item);
             stockAct.push({idProd, restarAlStock});
             console.log (stockAct);
             actualizarStockDelArray();
+            break;
         }
     }
 }
@@ -99,7 +100,7 @@ function extraerStock(){
 //funcion para actualizar el stock del armazón elegido
 function actualizarStockDelArray(){
     for (let id of stockAct){
-        if (id == idProd){
+        if (id == lentesDisponibles.id){
             this.stock = stockDispo;
         }
     }
