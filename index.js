@@ -75,5 +75,32 @@ datosDeStock=[];
 function restarAlStock(idProd, stockDispo){
   datosDeStock.push({idProd,stockDispo});
   console.log(datosDeStock);
-  localStorage.setItem(`stockId`, JSON.stringify(datosDeStock));  
+  localStorage.setItem(`stockId`, JSON.stringify(datosDeStock)); 
+  extraerStock(); 
 };
+
+//saco id y stock actualizado del localStorage, esto vino del carrito.js
+let actualizacionDelStock = JSON.parse(localStorage.getItem("stockActualizado"));
+const stockAct = [];
+let idProd = "";
+let stockDispo = "";
+function extraerStock(){
+    if (stockAct != null){
+        for (let item of actualizacionDelStock) {
+            let { idProd, restarAlStock } = item;
+            console.log(item);
+            stockAct.push({idProd, restarAlStock});
+            console.log (stockAct);
+            actualizarStockDelArray();
+        }
+    }
+}
+
+//funcion para actualizar el stock del armazón elegido
+function actualizarStockDelArray(){
+    for (let id of stockAct){
+        if (id == idProd){
+            this.stock = stockDispo;
+        }
+    }
+}

@@ -64,9 +64,10 @@ function multiplicarPorLaCantDeseada(){
             let priceTotal2 = cardPrecio * parseInt(3);
             alert (`El valor a abonar es de $ ` + priceTotal2);
         }
+        restarAlStock(valor);
     });
     }
-    restarAlStock(valor);
+    
 }
 
 //funcion para extraer stock y id del producto seleccionado, que se guarda en carritoStockId
@@ -82,13 +83,17 @@ function extraerDataStock() {
 };
 
 function restarAlStock(value){
-    if (value != undefined || null){
-        let restarAlStock = carritoStockId.idProd - value;
-        console.log(restarAlStock);
-    }
+        for (let stock of carritoStockId){
+                let {stockDispo} = stock
+                    let restarAlStock = stockDispo - value; 
+                    carritoStockId.push({restarAlStock});
+                    localStorage.setItem(`stockActualizado`, JSON.stringify(carritoStockId));
+                    break;         
+        }
 }
 
+
 //NOTAS PARA MI
-//me falta restar a la cantidad seleccionada al stock 
+//devolver el stock al index actualizarlo y borrar el localStorage total 
 // validar input
 //crear un alert con los datos del comprador y lo elegido.
