@@ -87,13 +87,18 @@ function restarAlStock(value){
         for (let stock of carritoStockId){
                 let {stockDispo} = stock
                     let restarAlStock = stockDispo - value; 
-                    carritoStockId.push({restarAlStock});
-                    localStorage.setItem(`stockActualizado`, JSON.stringify(carritoStockId));
-         break;           
+                    enviarAIndexActualizStock(restarAlStock);  
         }        
     }
 }
 
+function enviarAIndexActualizStock (stockYaRestado){
+    if (stockYaRestado != null || undefined){
+        carritoStockId.push({stockYaRestado});
+        localStorage.setItem(`stockActualizado`, JSON.stringify(carritoStockId));
+    }
+
+}
 
 //NOTAS PARA MI
 //devolver el stock al index actualizarlo y borrar el localStorage total 

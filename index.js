@@ -85,16 +85,19 @@ const stockAct = [];
 let idProd = "";
 let stockDispo = "";
 function extraerStock(){
-    if (stockAct != null || undefined){
         for (let item of actualizacionDelStock) {
             let { idProd, restarAlStock } = item;
             console.log(item);
-            stockAct.push({idProd, restarAlStock});
-            console.log (stockAct);
-            actualizarStockDelArray();
+            almacenarArrayIdYStockAct(idProd, restarAlStock);
             break;
         }
-    }
+}
+
+//funcion para adherir al carrito lo sacado del localStorage que viene de la hoja carrito.js 
+function almacenarArrayIdYStockAct(id, stockRestado){
+    stockAct.push({id, stockRestado});
+    console.log (stockAct);
+    actualizarStockDelArray();
 }
 
 //funcion para actualizar el stock del armazón elegido
