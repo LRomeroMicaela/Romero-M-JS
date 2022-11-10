@@ -82,22 +82,31 @@ function restarAlStock(idProd, stockDispo){
 //saco id y stock actualizado del localStorage, esto vino del carrito.js
 let actualizacionDelStock = JSON.parse(localStorage.getItem("stockActualizado"));
 const stockAct = [];
-let idProd = "";
-let stockDispo = "";
 function extraerStock(){
         for (let item of actualizacionDelStock) {
-            let { idProd, restarAlStock } = item;
+            let { idProd, cantidad } = item;
             console.log(item);
-            almacenarArrayIdYStockAct(idProd, restarAlStock);
-            break;
+            almacenarArrayIdYStockAct(idProd, cantidad);
+            //break;
         }
 }
 
-//funcion para adherir al carrito lo sacado del localStorage que viene de la hoja carrito.js 
-function almacenarArrayIdYStockAct(id, stockRestado){
-    stockAct.push({id, stockRestado});
+//funcion para adherir al carrito lo sacado del localStorage que viene de la hoja carrito.js, cantidad a comprar y ID
+function almacenarArrayIdYStockAct(id, cantDeseada){
+    stockAct.push({id, cantDeseada});
     console.log (stockAct);
-    actualizarStockDelArray();
+    restarAlStockLaCantVendida();
+}
+
+function restarAlStockLaCantVendida(){
+    for (let id of stockAct){
+        if (id == lentesDisponibles.id){
+            let {value} = cantidad 
+            let restarAlStock = lentesDisponibles.stock - value;
+            console.log(restarAlStock);
+            return restarAlStock; 
+        }
+    }
 }
 
 //funcion para actualizar el stock del armazón elegido

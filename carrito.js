@@ -64,7 +64,8 @@ function multiplicarPorLaCantDeseada(){
             let priceTotal2 = cardPrecio * parseInt(3);
             alert (`El valor a abonar es de $ ` + priceTotal2);
         }
-        restarAlStock(valor);
+        enviarAIndexActualizStock(valor);
+        //restarAlStock(valor);
     });
     }
     
@@ -82,19 +83,19 @@ function extraerDataStock() {
     }
 };
 
-function restarAlStock(value){
-        if(value != undefined || null ){
-        for (let stock of carritoStockId){
-                let {stockDispo} = stock
-                    let restarAlStock = stockDispo - value; 
-                    enviarAIndexActualizStock(restarAlStock);  
-        }        
-    }
-}
+// function restarAlStock(value){
+//         if(value != undefined || null ){
+//         for (let stock of carritoStockId){
+//                 let {stockDispo} = stock
+//                     //let restarAlStock = stockDispo - value; 
+//                     enviarAIndexActualizStock(restarAlStock);  
+//         }        
+//     }
+// }
 
-function enviarAIndexActualizStock (stockYaRestado){
-    if (stockYaRestado != null || undefined){
-        carritoStockId.push({stockYaRestado});
+function enviarAIndexActualizStock (value){
+    if (value != null || undefined){
+        carritoStockId.push({value});
         localStorage.setItem(`stockActualizado`, JSON.stringify(carritoStockId));
     }
 
