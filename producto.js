@@ -30,7 +30,7 @@ const armazon2 = new Lentes(
 	"Envolvente",
 	"Negro",
 	7500,
-	100,
+	10,
 );
 const armazon3 = new Lentes(
 	102,

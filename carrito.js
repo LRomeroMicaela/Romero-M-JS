@@ -42,8 +42,7 @@ cantidadAComprar.addEventListener("click", (e) => {
 		const armazon = productosGuardados.find(
 			(armazon) => armazon.id === parseInt(id),
 		);
-		armazon.stock = armazon.stock - valor;
-		console.log[armazon.stock];
+		armazon.stock -= valor
 	});
 	localStorage.setItem("lentesDisponibles", JSON.stringify(productosGuardados));
 	console.log(productosGuardados);
